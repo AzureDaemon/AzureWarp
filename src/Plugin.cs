@@ -12,7 +12,7 @@ namespace AzureWarp;
 public class Plugin : BaseUnityPlugin
 {
     public const string Guid = "com.azurecore.azurewarp";
-    public const string Version = "0.3.0";
+    public const string Version = "0.3.1";
 
     internal static ManualLogSource Log = null!;
     internal static WarpConfig Cfg = null!;

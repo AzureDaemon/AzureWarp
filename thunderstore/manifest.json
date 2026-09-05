@@ -1,6 +1,6 @@
 {
   "name": "AzureWarp",
-  "version_number": "0.3.0",
+  "version_number": "0.3.1",
   "website_url": "https://github.com/azuredaemon/AzureWarp",
   "description": "Portable Chaos Gates: warp yourself to the ship with a rebindable key, keeping your held items. Also keeps items through the inverse teleporter and can shorten its cooldown. Multiplayer-safe.",
   "dependencies": [

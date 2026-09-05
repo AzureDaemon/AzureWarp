@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.3.1
+- Fixed the buildup warp's VFX/SFX not matching the actual 3-second charge — the pad animation (`"Teleport A"` trigger) could get stuck mid-transition and linger a few seconds after the warp. That trigger belongs to the ship teleporter's own vanilla button-press animation sequence, which we weren't driving fully; we no longer touch it and rely on our own SFX cue for the buildup instead. No config or gameplay changes.
+
 ## 0.3.0
 - **Inverse teleporter cooldown override** (new). The ship's inverse teleporter has a long 210-second vanilla cooldown; you can now shorten it. New config under "Inverse Teleporter": `OverrideInverseCooldown` (default off) + `InverseCooldownSeconds` (default 10, matching the regular teleporter). Host-authoritative — the host's value is synced to the whole lobby. Leaves the regular teleporter untouched.
 

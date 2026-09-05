@@ -33,7 +33,8 @@ Copy-Item (Join-Path $ts 'CHANGELOG.md') $stage
 Copy-Item $iconPath $stage
 Copy-Item (Join-Path $proj 'bin\Release\AzureWarp.dll') $pluginDir
 
-$zip = Join-Path $proj 'AzureCore-AzureWarp-0.3.0.zip'
+$manifestVersion = (Get-Content (Join-Path $ts 'manifest.json') -Raw | ConvertFrom-Json).version_number
+$zip = Join-Path $proj ("AzureCore-AzureWarp-{0}.zip" -f $manifestVersion)
 if (Test-Path $zip) { Remove-Item $zip -Force }
 Compress-Archive -Path (Join-Path $stage '*') -DestinationPath $zip -CompressionLevel Optimal
 Write-Output ("zip  -> " + $zip)
