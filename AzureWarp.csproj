@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>AzureWarp</AssemblyName>
+    <Product>AzureWarp</Product>
+    <Version>0.3.0</Version>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+    <NoWarn>$(NoWarn);CS0649;CS8618</NoWarn>
+  </PropertyGroup>
+
+  <!-- BepInEx + game libraries via NuGet -->
+  <ItemGroup>
+    <PackageReference Include="BepInEx.Core" Version="5.4.21" />
+    <PackageReference Include="LethalCompany.GameLibs.Steam" Version="81.0.5-ngd.0" PrivateAssets="all" />
+  </ItemGroup>
+
+  <!-- Mod dependencies referenced locally (copied into libs/, not shipped) -->
+  <ItemGroup>
+    <Reference Include="LethalCompanyInputUtils">
+      <HintPath>libs\LethalCompanyInputUtils.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="LethalConfig">
+      <HintPath>libs\LethalConfig.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Xilophor.StaticNetcodeLib">
+      <HintPath>libs\Xilophor.StaticNetcodeLib.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>
